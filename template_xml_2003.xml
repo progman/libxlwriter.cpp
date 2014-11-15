@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+
+	<Styles>
+
+		<Style ss:ID="s62">
+			<NumberFormat ss:Format="Short Date"/>
+		</Style>
+
+		<Style ss:ID="s63">
+			<NumberFormat ss:Format="_-* #,##0.00&quot;р.&quot;_-;\-* #,##0.00&quot;р.&quot;_-;_-* &quot;-&quot;??&quot;р.&quot;_-;_-@_-"/>
+		</Style>
+
+	</Styles>
+
+	<Worksheet ss:Name="list">
+		<Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="3">
+
+			<Column ss:AutoFitWidth="1" ss:StyleID="s62" />
+			<Column ss:AutoFitWidth="1" ss:StyleID="s63" />
+			<Column ss:AutoFitWidth="1" />
+
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Дата</Data></Cell>
+				<Cell><Data ss:Type="String">Поступило</Data></Cell>
+				<Cell><Data ss:Type="String">Назначение платежа</Data></Cell>
+			</Row>
+
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="DateTime">2014-04-09T00:00:00.000</Data></Cell>
+				<Cell><Data ss:Type="Number">10000</Data></Cell>
+				<Cell><Data ss:Type="String">Инкассация за 2014-04-09г. препроводительная ведомость 137/</Data></Cell>
+			</Row>
+
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="DateTime">2014-04-09T00:00:00.000</Data></Cell>
+				<Cell><Data ss:Type="Number">10000</Data></Cell>
+				<Cell><Data ss:Type="String">Инкассация за 2014-04-09г. препроводительная ведомость 137/</Data></Cell>
+			</Row>
+
+		</Table>
+	</Worksheet>
+
+</Workbook>

@@ -1,0 +1,6 @@
+library for create and get/write Excel XML document
+
+
+1) Get this : git clone https://github.com/progman/libxlwriter.git
+2) Make this: git submodule update --init && make x64 && ./test.sh
+3) Enjoy!
