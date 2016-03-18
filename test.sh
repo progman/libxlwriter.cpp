@@ -1,5 +1,8 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# 0.0.1
+# Alexey Potehin <gnuplanet@gmail.com>, http://www.gnuplanet.ru/doc/cv
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 APP='./bin/test';
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 # run app
@@ -13,14 +16,23 @@ function run_app()
 		STDOUT=$("${APP}" "${@}");
 		RESULT="${?}";
 	else
-		local VAL="valgrind --tool=memcheck --leak-check=yes --leak-check=full --show-reachable=yes --log-file=valgrind.log ${APP} ${@}";
-		STDOUT=$(${VAL});
-		RESULT="${?}";
+		local LOG_ID=0;
+		local LOG_NAME;
 
-		echo '--------------------------' >> valgrind.all.log;
-		touch valgrind.log;
-		cat valgrind.log >> valgrind.all.log;
-		rm -rf valgrind.log;
+		while true;
+		do
+			LOG_NAME=$(printf "valgrind.%03u\n" ${LOG_ID});
+
+			if [ ! -e "${LOG_NAME}" ];
+			then
+				break;
+			fi
+
+			(( LOG_ID++ ));
+		done
+
+		STDOUT=$(valgrind --tool=memcheck --leak-check=yes --leak-check=full --show-reachable=yes --log-file="${LOG_NAME}" "${APP}" "${@}");
+		RESULT="${?}";
 	fi
 
 	if [ "${STDOUT}" != "" ];
