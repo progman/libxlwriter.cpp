@@ -385,7 +385,7 @@ bool libxlwriter_t::write(const std::string &filename, bool flag_sync)
 	}
 
 
-	rc = libcore::file_set(filename.c_str(), 0, document, flag_sync, true);
+	rc = libcore::file_set(filename.c_str(), 0, document, flag_sync, true, false);
 	if (rc == -1)
 	{
 		this->error_str = strerror(errno);
